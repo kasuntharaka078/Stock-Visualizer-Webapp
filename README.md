@@ -55,4 +55,4 @@ This application uses the following libraries:
 
 ## Webapp
 
-[Webapp](https://stockvisualizer.streamlit.app/)
+[stockvisualizer](https://stockvisualizer.streamlit.app/)
