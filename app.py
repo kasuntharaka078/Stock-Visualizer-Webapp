@@ -6,7 +6,7 @@ import plotly.express as px
 
 st.title('Stock Data Visualizer')
 symbol = st.text_input("Enter stock symbol (e.g., BTC-USD):", 'BTC-USD')
-period = st.text_input("Enter stock period (e.g., 90d):", '90d')
+period = st.text_input("Enter stock period (e.g., 3mo):", '3mo')
 
 # Importing Data from Yahoo Finance API
 ticker = yf.Ticker(symbol)
