@@ -34,7 +34,7 @@ st.subheader("Stock 10-day SMA vs. Close Prices")
 df['SMA_10'] = df['Close'].rolling(window=10).mean()
 
 # Create a Plotly Express line plot
-fig = px.line(df, x=df.Date, y=['SMA_10', 'Close'], labels={'variable': 'Price Type'}, title="Stock 10-day SMA vs. Close Prices")
+fig = px.line(df, x='Date', y=['SMA_10', 'Close'], labels={'variable': 'Price Type'}, title="Stock 10-day SMA vs. Close Prices")
 st.plotly_chart(fig)
 
 st.subheader("Stock 10-day SMA and EMA vs. Close Prices")
@@ -44,7 +44,7 @@ df['SMA_10'] = df['Close'].rolling(window=10).mean()
 df['EMA_10'] = df['Close'].ewm(span=10, adjust=False).mean()
 
 # Create a Plotly Express line plot
-fig = px.line(df, x=df.Date, y=['SMA_10', 'EMA_10', 'Close'], labels={'variable': 'Price Type'}, title="Stock 10-day SMA and EMA vs. Close Prices")
+fig = px.line(df, x='Date', y=['SMA_10', 'EMA_10', 'Close'], labels={'variable': 'Price Type'}, title="Stock 10-day SMA and EMA vs. Close Prices")
 st.plotly_chart(fig)
 
 st.subheader("Stock MACD and Signal Line")
@@ -56,5 +56,5 @@ df['MACD'] = df['12-day EMA'] - df['26-day EMA']
 df['Signal Line'] = df['MACD'].ewm(span=9, adjust=False).mean()
 
 # Create a Plotly Express line plot
-fig = px.line(df, x=df.Date, y=['MACD', 'Signal Line'], labels={'variable': 'Indicator'}, title="Stock MACD and Signal Line")
+fig = px.line(df, x='Date', y=['MACD', 'Signal Line'], labels={'variable': 'Indicator'}, title="Stock MACD and Signal Line")
 st.plotly_chart(fig)
