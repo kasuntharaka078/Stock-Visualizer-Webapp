@@ -16,7 +16,7 @@ df = df.reset_index()
 st.subheader("Stock Prices Over Time")
 
 # Create a Plotly Express line plot
-fig = px.line(df, x=df.Date, y=["Open", "High", "Low", "Close"], labels={"variable": "Price Type"},
+fig = px.line(df, x='Date', y=["Open", "High", "Low", "Close"], labels={"variable": "Price Type"},
 title="Stock Prices Over Time")
 st.plotly_chart(fig)
 
